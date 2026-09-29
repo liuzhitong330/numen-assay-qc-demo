@@ -1,0 +1,568 @@
+{
+  "conditions": 42,
+  "curves": 147,
+  "ntc_curves": 21,
+  "flagged": 28,
+  "ntc_crossings": 18,
+  "default": {
+    "group": "D_D",
+    "inhibitor": 20,
+    "level": 1,
+    "detected": 2,
+    "median": 16.317242180123582,
+    "shift": 3.836402119315819,
+    "spread": 0.15053043803303012,
+    "ntc_margin": 16.373828018569444,
+    "reasons": [
+      "incomplete crossing",
+      "reference shift"
+    ]
+  },
+  "rows": [
+    {
+      "group": "A_A",
+      "inhibitor": 0,
+      "level": 64,
+      "detected": 3,
+      "median": 10.177036891493758,
+      "shift": 0.0,
+      "spread": 0.8227060546974947,
+      "ntc_margin": 13.146207956788896,
+      "reasons": [
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "A_B",
+      "inhibitor": 0,
+      "level": 16,
+      "detected": 3,
+      "median": 9.422906952722375,
+      "shift": 0.0,
+      "spread": 0.08815653431538983,
+      "ntc_margin": 14.684635954170965,
+      "reasons": []
+    },
+    {
+      "group": "A_C",
+      "inhibitor": 0,
+      "level": 4,
+      "detected": 3,
+      "median": 10.92383839611613,
+      "shift": 0.0,
+      "spread": 0.3523481961706665,
+      "ntc_margin": 13.180996575080503,
+      "reasons": []
+    },
+    {
+      "group": "A_D",
+      "inhibitor": 0,
+      "level": 1,
+      "detected": 3,
+      "median": 12.480840060807763,
+      "shift": 0.0,
+      "spread": 0.11908161766842085,
+      "ntc_margin": 11.61332424500851,
+      "reasons": []
+    },
+    {
+      "group": "A_E",
+      "inhibitor": 0,
+      "level": 0.25,
+      "detected": 3,
+      "median": 14.726821478925219,
+      "shift": 0.0,
+      "spread": 0.190356212426396,
+      "ntc_margin": 9.353547085617503,
+      "reasons": []
+    },
+    {
+      "group": "A_F",
+      "inhibitor": 0,
+      "level": 0.0625,
+      "detected": 3,
+      "median": 16.87734789721743,
+      "shift": 0.0,
+      "spread": 0.173993089503103,
+      "ntc_margin": 7.207271179010323,
+      "reasons": []
+    },
+    {
+      "group": "B_A",
+      "inhibitor": 5,
+      "level": 64,
+      "detected": 3,
+      "median": 10.83471882613584,
+      "shift": 0.6576819346420812,
+      "spread": 8.814999079806729,
+      "ntc_margin": 6.917465120132874,
+      "reasons": [
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "B_B",
+      "inhibitor": 5,
+      "level": 16,
+      "detected": 3,
+      "median": 9.97748874933178,
+      "shift": 0.5545817966094049,
+      "spread": 0.2868922175424391,
+      "ntc_margin": 15.856915583260514,
+      "reasons": []
+    },
+    {
+      "group": "B_C",
+      "inhibitor": 5,
+      "level": 4,
+      "detected": 3,
+      "median": 11.376228504604075,
+      "shift": 0.45239010848794514,
+      "spread": 0.07987240478628799,
+      "ntc_margin": 14.44971399897818,
+      "reasons": []
+    },
+    {
+      "group": "B_D",
+      "inhibitor": 5,
+      "level": 1,
+      "detected": 3,
+      "median": 13.405450246273519,
+      "shift": 0.924610185465756,
+      "spread": 0.06655550175688241,
+      "ntc_margin": 12.463137102146813,
+      "reasons": []
+    },
+    {
+      "group": "B_E",
+      "inhibitor": 5,
+      "level": 0.25,
+      "detected": 3,
+      "median": 15.708914070330126,
+      "shift": 0.982092591404907,
+      "spread": 0.1166733526432644,
+      "ntc_margin": 10.046682142739677,
+      "reasons": []
+    },
+    {
+      "group": "B_F",
+      "inhibitor": 5,
+      "level": 0.0625,
+      "detected": 3,
+      "median": 18.30330440740393,
+      "shift": 1.4259565101865022,
+      "spread": 0.5969689028848961,
+      "ntc_margin": 7.525558607574876,
+      "reasons": [
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "C_A",
+      "inhibitor": 10,
+      "level": 64,
+      "detected": 3,
+      "median": 10.989681015007706,
+      "shift": 0.8126441235139481,
+      "spread": 0.30745562575620333,
+      "ntc_margin": 17.559774606519923,
+      "reasons": []
+    },
+    {
+      "group": "C_B",
+      "inhibitor": 10,
+      "level": 16,
+      "detected": 3,
+      "median": 10.371200590016791,
+      "shift": 0.948293637294416,
+      "spread": 0.2910971755633014,
+      "ntc_margin": 17.996793275044105,
+      "reasons": []
+    },
+    {
+      "group": "C_C",
+      "inhibitor": 10,
+      "level": 4,
+      "detected": 3,
+      "median": 12.1227578900673,
+      "shift": 1.1989194939511698,
+      "spread": 0.4051322326721909,
+      "ntc_margin": 16.427349151444655,
+      "reasons": []
+    },
+    {
+      "group": "C_D",
+      "inhibitor": 10,
+      "level": 1,
+      "detected": 3,
+      "median": 14.151251430154351,
+      "shift": 1.6704113693465885,
+      "spread": 0.03936817528015979,
+      "ntc_margin": 14.48479164612194,
+      "reasons": []
+    },
+    {
+      "group": "C_E",
+      "inhibitor": 10,
+      "level": 0.25,
+      "detected": 3,
+      "median": 16.563654496074303,
+      "shift": 1.8368330171490843,
+      "spread": 0.081389915499809,
+      "ntc_margin": 12.021433551115802,
+      "reasons": []
+    },
+    {
+      "group": "C_F",
+      "inhibitor": 10,
+      "level": 0.0625,
+      "detected": 3,
+      "median": 19.090454197808715,
+      "shift": 2.213106300591285,
+      "spread": 0.1379721102550029,
+      "ntc_margin": 9.537791835195925,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "D_A",
+      "inhibitor": 20,
+      "level": 64,
+      "detected": 3,
+      "median": 12.711564975034891,
+      "shift": 2.534528083541133,
+      "spread": 0.18113448883883088,
+      "ntc_margin": 19.973360909690953,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "D_B",
+      "inhibitor": 20,
+      "level": 16,
+      "detected": 3,
+      "median": 11.975529771692315,
+      "shift": 2.5526228189699403,
+      "spread": 0.37474322141102867,
+      "ntc_margin": 20.627230544800895,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "D_C",
+      "inhibitor": 20,
+      "level": 4,
+      "detected": 3,
+      "median": 13.655118630021954,
+      "shift": 2.7312802339058244,
+      "spread": 0.15061371584995875,
+      "ntc_margin": 18.985950572672756,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "D_D",
+      "inhibitor": 20,
+      "level": 1,
+      "detected": 2,
+      "median": 16.317242180123582,
+      "shift": 3.836402119315819,
+      "spread": 0.15053043803303012,
+      "ntc_margin": 16.373828018569444,
+      "reasons": [
+        "incomplete crossing",
+        "reference shift"
+      ]
+    },
+    {
+      "group": "D_E",
+      "inhibitor": 20,
+      "level": 0.25,
+      "detected": 3,
+      "median": 19.051264374228737,
+      "shift": 4.324442895303518,
+      "spread": 0.11523446845939134,
+      "ntc_margin": 13.607910344414204,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "D_F",
+      "inhibitor": 20,
+      "level": 0.0625,
+      "detected": 3,
+      "median": 21.99294918079333,
+      "shift": 5.115601283575902,
+      "spread": 0.14322899328140437,
+      "ntc_margin": 10.692800048803136,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "E_A",
+      "inhibitor": 30,
+      "level": 64,
+      "detected": 3,
+      "median": 14.846964431942094,
+      "shift": 4.669927540448336,
+      "spread": 0.6461204152682445,
+      "ntc_margin": 22.619009906066864,
+      "reasons": [
+        "reference shift",
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "E_B",
+      "inhibitor": 30,
+      "level": 16,
+      "detected": 3,
+      "median": 14.092770267115258,
+      "shift": 4.669863314392883,
+      "spread": 0.39180779584201275,
+      "ntc_margin": 23.427859507057157,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "E_C",
+      "inhibitor": 30,
+      "level": 4,
+      "detected": 3,
+      "median": 16.115505091440646,
+      "shift": 5.191666695324516,
+      "spread": 0.2400329621647117,
+      "ntc_margin": 21.423924393888854,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "E_D",
+      "inhibitor": 30,
+      "level": 1,
+      "detected": 3,
+      "median": 19.040368714020648,
+      "shift": 6.559528653212885,
+      "spread": 0.2518894262512319,
+      "ntc_margin": 18.64445730828933,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "E_E",
+      "inhibitor": 30,
+      "level": 0.25,
+      "detected": 3,
+      "median": 22.25928541374662,
+      "shift": 7.532463934821402,
+      "spread": 0.10504904487911304,
+      "ntc_margin": 15.352144932596282,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "E_F",
+      "inhibitor": 30,
+      "level": 0.0625,
+      "detected": 3,
+      "median": 25.57669519606778,
+      "shift": 8.699347298850352,
+      "spread": 0.7078301200707351,
+      "ntc_margin": 11.464729082404816,
+      "reasons": [
+        "reference shift",
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "F_A",
+      "inhibitor": 40,
+      "level": 64,
+      "detected": 3,
+      "median": 17.32681457676345,
+      "shift": 7.149777685269692,
+      "spread": 1.1090436040163638,
+      "ntc_margin": 21.730855679533274,
+      "reasons": [
+        "reference shift",
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "F_B",
+      "inhibitor": 40,
+      "level": 16,
+      "detected": 3,
+      "median": 16.48261517610089,
+      "shift": 7.0597082233785144,
+      "spread": 0.4222846722186375,
+      "ntc_margin": 23.135704621871056,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "F_C",
+      "inhibitor": 40,
+      "level": 4,
+      "detected": 3,
+      "median": 18.94982580303887,
+      "shift": 8.02598740692274,
+      "spread": 0.4369945835757072,
+      "ntc_margin": 20.90355583352146,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "F_D",
+      "inhibitor": 40,
+      "level": 1,
+      "detected": 3,
+      "median": 22.052183367586604,
+      "shift": 9.571343306778841,
+      "spread": 0.041743188269226295,
+      "ntc_margin": 17.849950988837715,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "F_E",
+      "inhibitor": 40,
+      "level": 0.25,
+      "detected": 3,
+      "median": 25.989033966652563,
+      "shift": 11.262212487727345,
+      "spread": 0.3778737429033825,
+      "ntc_margin": 13.852956550337222,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "F_F",
+      "inhibitor": 40,
+      "level": 0.0625,
+      "detected": 3,
+      "median": 29.718239475504248,
+      "shift": 12.840891578286818,
+      "spread": 0.7616294362571523,
+      "ntc_margin": 9.47412080718625,
+      "reasons": [
+        "reference shift",
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "G_A",
+      "inhibitor": 50,
+      "level": 64,
+      "detected": 3,
+      "median": 20.589219645298744,
+      "shift": 10.412182753804986,
+      "spread": 0.6530725138465989,
+      "ntc_margin": null,
+      "reasons": [
+        "reference shift",
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "G_B",
+      "inhibitor": 50,
+      "level": 16,
+      "detected": 3,
+      "median": 19.857540434800146,
+      "shift": 10.434633482077771,
+      "spread": 1.599802519235972,
+      "ntc_margin": null,
+      "reasons": [
+        "reference shift",
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "G_C",
+      "inhibitor": 50,
+      "level": 4,
+      "detected": 3,
+      "median": 22.49236998025984,
+      "shift": 11.568531584143711,
+      "spread": 0.25228077175331975,
+      "ntc_margin": null,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "G_D",
+      "inhibitor": 50,
+      "level": 1,
+      "detected": 3,
+      "median": 26.781355619561793,
+      "shift": 14.30051555875403,
+      "spread": 1.1270403461752565,
+      "ntc_margin": null,
+      "reasons": [
+        "reference shift",
+        "replicate spread"
+      ]
+    },
+    {
+      "group": "G_E",
+      "inhibitor": 50,
+      "level": 0.25,
+      "detected": 3,
+      "median": 30.794307567927362,
+      "shift": 16.067486089002145,
+      "spread": 0.30116240332692,
+      "ntc_margin": null,
+      "reasons": [
+        "reference shift"
+      ]
+    },
+    {
+      "group": "G_F",
+      "inhibitor": 50,
+      "level": 0.0625,
+      "detected": 3,
+      "median": 35.288905438069314,
+      "shift": 18.411557540851884,
+      "spread": 0.6018164828609969,
+      "ntc_margin": null,
+      "reasons": [
+        "reference shift",
+        "replicate spread"
+      ]
+    }
+  ],
+  "threshold_sensitivity": [
+    {
+      "threshold": 0.5,
+      "flagged": 25
+    },
+    {
+      "threshold": 1.0,
+      "flagged": 28
+    },
+    {
+      "threshold": 1.5,
+      "flagged": 33
+    },
+    {
+      "threshold": 2.0,
+      "flagged": 34
+    }
+  ]
+}

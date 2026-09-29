@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A measured-data qPCR review tool: inspect inhibition, repeatability and background before interpreting an assay. By Cathy Liu.">
+<title>Exploratory Analyses Inspired by the Numen Team</title>
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<main class="page">
+<h1>Exploratory Analyses Inspired by the Numen Team</h1>
+<div class="byline">Cathy Liu · Biotechnology &amp; quantitative biology · <a href="mailto:cathyliu014@gmail.com">cathyliu014@gmail.com</a><br>
+Prepared for Numen · Research Associate II<br>
+Personal exploratory project, September 2026</div>
+<nav class="section-nav" aria-label="Demo sections"><a href="#motivation">The question</a><a href="#a1">Inspect a condition</a><a href="#a2">Review the experiment</a><a href="#relevance">Relevance &amp; methods</a></nav>
+
+<p>A delayed amplification curve can mean less starting material, inhibition, or a problem with the experiment. For a team developing earlier cancer detection, deciding which explanation the data support matters as much as recording the signal. Numen’s Research Associate II role puts that judgment close to the bench.</p>
+<p>I built a small assay-review tool around 147 measured qPCR curves. It puts each condition beside its matched reference, its technical replicates, and its no-template controls, then turns discrepancies into a traceable review list. The question is simple: which measurements deserve another look before we interpret them?</p>
+
+<hr id="motivation">
+<section aria-labelledby="how-heading">
+<h2 id="how-heading">How it works</h2>
+<p>The public <em>competimer</em> benchmark measures human AluSx amplification at seven competitive-primer levels and six template-series levels, with three replicates and matched no-template controls (NTCs). These are external reference data, not Numen’s platform or patient samples.</p>
+<p>Subtract the median of cycles 1–3 from each trace, then find where it first crosses a common fluorescence threshold. Compare that crossing time with the same series level at 0% competimer. The controls below change the review criteria; they never remove a curve.</p>
+</section>
+
+<hr id="a1">
+<section aria-labelledby="analysis-one-heading">
+<h2 id="analysis-one-heading">Analysis 1 — Is the signal interpretable?</h2>
+<div class="experiment"><div class="exp-label">Measured experiment</div><div class="exp-title">A late result is a question, not an answer.</div><p>Start at 20% competimer and series level 1. Two replicates cross the threshold; one does not. A median alone would hide the missing measurement.</p></div>
+<div class="panel">
+<div class="controls">
+<label for="inhibitor">Competimer level<select id="inhibitor"><option value="0">0% · reference</option><option value="5">5%</option><option value="10">10%</option><option value="20" selected>20%</option><option value="30">30%</option><option value="40">40%</option><option value="50">50%</option></select></label>
+<label for="level">Template-series level<select id="level"><option value="64">64</option><option value="16">16</option><option value="4">4</option><option value="1" selected>1</option><option value="0.25">0.25</option><option value="0.0625">0.0625</option></select></label>
+</div>
+<div class="sliders">
+<label for="threshold">Fluorescence threshold <output id="threshold-label">1.00</output> a.u.</label><input id="threshold" type="range" min="0.5" max="2" step="0.1" value="1">
+<details><summary>Adjust review criteria</summary>
+<label for="shift">Maximum absolute reference shift <output id="shift-label">2.0</output> cycles</label><input id="shift" type="range" min="0.5" max="8" step="0.5" value="2">
+<label for="spread">Maximum replicate range <output id="spread-label">0.50</output> cycles</label><input id="spread" type="range" min="0.1" max="2" step="0.1" value="0.5">
+<label for="margin">Minimum sample-to-NTC separation <output id="margin-label">5.0</output> cycles</label><input id="margin" type="range" min="1" max="10" step="0.5" value="5">
+</details></div>
+<div class="legend"><span class="key selected">Selected triplicate</span><span class="key reference">0% matched reference</span><span class="key ntc">Matched NTCs</span></div>
+<div class="chart-wrap"><svg id="hero-viz" class="viz" viewBox="0 0 600 340" role="img" aria-label="Selected measured amplification curves with matched reference and no-template controls"></svg></div>
+<div class="readout" id="readout" aria-live="polite"></div>
+<div id="replicates" class="replicates"></div>
+<figcaption>45 cycles per curve; fluorescence in source arbitrary units after baseline correction. Technical replicates, not independent biological samples. Series levels preserve the source labels and are not absolute concentrations. <a href="https://cran.r-project.org/web/packages/qpcR/refman/qpcR.html#qpcR_datasets">Dataset documentation</a>.</figcaption>
+</div>
+<div class="metric-row">
+<div class="metric"><span class="metric-val" id="metric-one"></span><span class="metric-desc">replicates cross threshold</span></div>
+<div class="metric"><span class="metric-val" id="metric-two"></span><span class="metric-desc">median shift, cycles</span></div>
+<div class="metric"><span class="metric-val" id="metric-three"></span><span class="metric-desc">replicate range, cycles</span></div>
+</div>
+<p class="utility"><strong>What this lets the lab do:</strong> identify incomplete triplicates, shifted amplification and weak separation from background before comparing experimental conditions.</p>
+<p class="utility"><strong>Where Cathy adds value:</strong> connect analytical method-validation thinking with a reproducible explanation of what needs checking next.</p>
+</section>
+
+<hr id="a2">
+<section aria-labelledby="analysis-two-heading">
+<h2 id="analysis-two-heading">Analysis 2 — What should we review first?</h2>
+<div class="experiment"><div class="exp-label">All 42 sample conditions</div><div class="exp-title" id="queue-heading"></div><p>A mark means “inspect this condition under these exploratory rules.” It does not establish a failed assay, contamination, or a clinical result.</p></div>
+<div class="matrix-scroll"><table class="matrix"><caption>Median crossing-time shift from the matched 0% reference (cycles). Select a cell to inspect its curves. * = review; ND = no sample replicate crosses.</caption><thead><tr><th scope="col">Competimer</th><th scope="col">64</th><th scope="col">16</th><th scope="col">4</th><th scope="col">1</th><th scope="col">0.25</th><th scope="col">0.0625</th></tr></thead><tbody id="matrix-body"></tbody></table></div>
+<p class="utility" id="cohort-summary"></p>
+<div class="queue-toolbar"><label for="queue-filter">Show<select id="queue-filter"><option value="flagged">Conditions needing review</option><option value="all">All conditions</option></select></label><button id="export" type="button">Download review CSV</button><button id="reset" type="button">Reset criteria</button></div>
+<div class="table-scroll"><table class="queue"><caption id="queue-caption">Review list with measured evidence and follow-up questions</caption><thead><tr><th scope="col">Condition</th><th scope="col">Evidence</th><th scope="col">Next check</th></tr></thead><tbody id="queue-body"></tbody></table></div>
+<p class="utility">The download includes every sample condition, the original curve IDs, current thresholds, all crossing times and review reasons. It keeps the measurement separate from the decision so another researcher can reproduce it.</p>
+</section>
+
+<hr id="relevance">
+<section aria-labelledby="relevance-heading">
+<h2 id="relevance-heading">Why this matters for the lab</h2>
+<p>Numen’s posting asks for independent assay execution, recognizing failed experiments, and records another person can reproduce. This tool explores the judgment connecting those tasks: retain the controls, show the disagreeing replicate, and make the reason for a repeat explicit. A useful next step would be to test these review rules on an approved internal control dataset and compare them with the team’s established acceptance criteria.</p>
+<h2>What I would bring</h2>
+<p>My background combines analytical method development and GMP documentation at CNBG with computational cancer research and scientific evidence synthesis. I would bring that attention to measurement quality and clear records to assay work, alongside my experience with molecular and cellular biology methods.</p>
+<h2>Methods note</h2>
+<p class="methods-note">This is an exploratory reanalysis of measured fluorescence data, built with coding assistance. Data are from Ruijter et al., <em>Methods</em> 59 (2013), 32–46, <a href="https://doi.org/10.1016/j.ymeth.2012.08.011">doi:10.1016/j.ymeth.2012.08.011</a>, distributed as <code>competimer</code> in <a href="https://cran.r-project.org/package=qpcR">qpcR 1.4-2</a> (GPL ≥2). The fetched <a href="https://github.com/cran/qpcR/tree/0ad07f2036db03add33a475964522f357a4ab8df">CRAN mirror commit</a> is pinned; qpcR’s model-fitting code was not executed. No verified relevant Numen-owned public dataset or repository was found.</p>
+<p class="methods-note">Crossing times use linear interpolation and a common baseline-corrected threshold. They are an exploratory Cq-like index, not the instrument’s Cq or a validated estimate of template quantity. Early amplification at the highest input can affect the baseline. The slider checks threshold sensitivity, not every analytical assumption. A shift is measured against the median detected 0% triplicate; an incomplete reference is flagged. A partial triplicate’s median remains visible but provisional. Replicate range is maximum minus minimum among detected curves.</p>
+<p class="methods-note">NTC separation is the earliest detected matched NTC minus the latest detected sample. If no NTC crosses by cycle 45, only a lower bound is available. Late NTC signal could be nonspecific amplification; melt-curve or product evidence is needed before attributing it to contamination. Default cutoffs (2-cycle shift, 0.5-cycle range, 5-cycle separation) are illustrative, not validated release rules. “No flag” never means clinically valid. These data cannot establish patient-level performance or hands-on assay competence.</p>
+<p class="methods-note"><a href="source-curves.csv">All source curves (CSV)</a> · <a href="checks.json">Independently computed checks</a> · <a href="analyze.py">Reproduction script</a> · <a href="https://github.com/liuzhitong330/numen-assay-qc-demo">Code &amp; provenance</a> · <a href="https://www.workatastartup.com/jobs/107792">Role</a></p>
+</section>
+<footer>Cathy Liu · <a href="mailto:cathyliu014@gmail.com">cathyliu014@gmail.com</a> · <a href="tel:+14152163799">415-216-3799</a><br>Personal research exploration · Not affiliated with or endorsed by Numen</footer>
+</main>
+<script src="data.js?v=1"></script><script src="app.js?v=1"></script>
+</body></html>
